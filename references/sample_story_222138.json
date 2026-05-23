@@ -1,0 +1,102 @@
+{
+  "bgm": null,
+  "voice": "",
+  "server": 0,
+  "actions": [
+    {
+      "type": "layout",
+      "wait": true,
+      "delay": 0,
+      "motion": "nf01",
+      "sideTo": "leftInside",
+      "costume": "338_casual-2023",
+      "sideFrom": "leftInside",
+      "character": 1,
+      "expression": "",
+      "layoutType": "appear",
+      "sideToOffsetX": 0,
+      "sideFromOffsetX": 0
+    },
+    {
+      "body": "唔...好冷呢...",
+      "name": " ",
+      "type": "talk",
+      "wait": true,
+      "close": false,
+      "delay": 0,
+      "voices": [],
+      "motions": [],
+      "characters": []
+    },
+    {
+      "body": "冬季，刚刚从口中呼出的白气涌上冷清的天空，随着干冷的寒风消散。",
+      "name": " ",
+      "type": "talk",
+      "wait": true,
+      "close": false,
+      "delay": 0,
+      "voices": [],
+      "motions": [],
+      "characters": []
+    },
+    {
+      "body": "我束了束有些松掉的围巾，虽然实际上围起来也不会觉得更暖和。",
+      "name": " ",
+      "type": "talk",
+      "wait": true,
+      "close": false,
+      "delay": 0,
+      "voices": [],
+      "motions": [],
+      "characters": []
+    },
+    {
+      "body": "但是，至少心那里会有她贴在身边的感觉。",
+      "name": " ",
+      "type": "talk",
+      "wait": true,
+      "close": false,
+      "delay": 0,
+      "voices": [],
+      "motions": [],
+      "characters": []
+    },
+    {
+      "body": "就结果来说应该是一样的吧",
+      "name": " ",
+      "type": "talk",
+      "wait": true,
+      "close": false,
+      "delay": 0,
+      "voices": [],
+      "motions": [],
+      "characters": []
+    },
+    {
+      "body": "视线低落地望着脚尖和它踩着的地面。",
+      "name": " ",
+      "type": "talk",
+      "wait": true,
+      "close": false,
+      "delay": 0,
+      "voices": [],
+      "motions": [],
+      "characters": []
+    },
+    {
+      "body": "不过，我不是在注意街道好像变硬了这种无聊的事情",
+      "name": " ",
+      "type": "talk",
+      "wait": true,
+      "close": false,
+      "delay": 0,
+      "voices": [],
+      "motions": [],
+      "characters": []
+    }
+  ],
+  "background": {
+    "url": "https://bestdori.com/api/upload/file/45008150d181c8fc93a382ce94cb0eac6c8a7822",
+    "type": "custom"
+  }
+}

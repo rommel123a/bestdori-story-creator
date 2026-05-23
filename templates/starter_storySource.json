@@ -1,0 +1,51 @@
+{
+  "server": 0,
+  "voice": "",
+  "bgm": null,
+  "background": {
+    "type": "bandori",
+    "bundle": "bg/scenario0",
+    "file": "bg00001"
+  },
+  "actions": [
+    {
+      "type": "effect",
+      "effectType": "blackIn",
+      "duration": 1.0,
+      "wait": true,
+      "delay": 0
+    },
+    {
+      "type": "sound",
+      "wait": false,
+      "delay": 0,
+      "bgm": { "type": "bandori", "file": "03_Normal" },
+      "se": null
+    },
+    {
+      "type": "layout",
+      "layoutType": "appear",
+      "character": 39,
+      "costume": "039_casual-2023",
+      "motion": "nf01",
+      "expression": "",
+      "sideFrom": "leftInside",
+      "sideTo": "leftInside",
+      "sideFromOffsetX": 0,
+      "sideToOffsetX": 0,
+      "wait": true,
+      "delay": 0
+    },
+    {
+      "type": "talk",
+      "name": "長崎 そよ",
+      "body": "おはよう。",
+      "wait": true,
+      "close": false,
+      "delay": 0,
+      "characters": [39],
+      "motions": [],
+      "voices": []
+    }
+  ]
+}

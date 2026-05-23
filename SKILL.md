@@ -194,18 +194,21 @@ The viewer renders characters at only **3 real X coordinates**: left group (x≈
 | 同框人数 | 推荐站位 | offsetX |
 |---------|---------|---------|
 | 2 | `leftInside` + `rightInside` | 0 / 0 |
-| 3 | `leftInside` + `center` + `rightInside` | 0 / 0 / 0 |
-| 4 | `leftInside`(-100) + `leftInside`(0) + `rightInside`(0) + `rightInside`(+100) | **-100 / 0 / 0 / +100** |
+| 3 | `leftInside` + `center` + `rightInside` | **-100 / 0 / +100** |
+| 4 | `leftInside`(-250) + `center`(-150) + `center`(+150) + `rightInside`(+250) | **-250 / -150 / +150 / +250** |
 | 5 | `left`(-200) + `left`(0) + `center`(0) + `right`(0) + `right`(+200) | -200 / 0 / 0 / 0 / +200 |
+
+**3 人较之前稍宽**（避免挤在一起的问题），3 人的 left/right 用 offsetX ±100。
+**4 人用 center-split 法**：center 组拆成两半（-150/+150），搭配左右组获得 4 个均匀分布的 x 坐标（间隙 ~0.5 屏宽）。
 
 **Example: 3→4 transition (someone enters mid-scene)**
 
 Before the newcomer's `appear`, insert `move` actions (`wait: false`) to shift existing characters into the balanced 4-person layout. Then the newcomer `appears` into the freed slot:
 
 ```
-Phase 1 (3人): Soyo(leftInside 0)  Taki(center 0)  Tomori(rightInside 0)
-Phase 2 (shift): Soyo move 0→-100,  Taki move center→leftInside 0
-Phase 3 (4人): Soyo(-0.50) Taki(-0.34) Tomori(+0.34) Anon(rightInside +100, +0.50)
+Phase 1 (3人): Soyo(leftInside -100)  Taki(center 0)  Tomori(rightInside +100)
+Phase 2 (shift): Soyo -100→-250,  Taki 0→center -150,  Tomori rightInside +100→center +150
+Phase 3 (4人): Soyo(leftIn -250)  Taki(center -150)  Tomori(center +150)  Anon(rightIn +250)
 ```
 
 After characters leave, move remaining ones back to centered 2-person positions.

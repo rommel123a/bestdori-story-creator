@@ -457,8 +457,8 @@ sideToX: function(side, offsetX) {
 | 同框人数 | 推荐站位 | offsetX |
 |----|----|----|
 | 2 | `leftInside` + `rightInside` | 0 / 0 |
-| 3 | `left` + `center` + `right` | 0 / 0 / 0 |
-| 4 | 不要堆 4 人到 3 个槽，用 offset 拉开：<br>`left`(-100) + `left`(0) + `right`(0) + `right`(+100) | -100 / 0 / 0 / +100 |
+| 3 | `leftInside`(-100) + `center`(0) + `rightInside`(+100) | **-100 / 0 / +100** |
+| 4 | `leftInside`(-250) + `center`(-150) + `center`(+150) + `rightInside`(+250) | **-250 / -150 / +150 / +250** |
 | **5** | `left`(-200) + `left`(0) + `center`(0) + `right`(0) + `right`(+200) | **-200 / 0 / 0 / 0 / +200** |
 | 6 | 用 leftOver(-50) + left(-50) + left(+150) + right(-150) + right(+50) + rightOver(+50) | 视情况微调 |
 
@@ -469,9 +469,10 @@ sideToX: function(side, offsetX) {
 1. **🔑 设计上避免 5 人同框**：分章节让 2-3 人出场，群聊用"画外音"（角色 talk + `characters:[]` + body 加"（画外）"前缀）。
 2. **章节切换 = 全员 hide 重置**：每个 telop/blackOut 后批量 hide 上一幕角色（`wait:false` 的 hide 不卡流程），下幕重新 appear 仅需要的 2-3 人。
 3. **2 人对话**：用 `leftInside` + `rightInside`。
-4. **3 人对话**：用 `left` + `center` + `right`。
-5. **必须 5 人合影**（结尾镜头）时，**两端用 `±200` 像素 offset**，把人均匀拉到 [-0.65, -0.34, 0, +0.34, +0.65] 五点。
-6. **不要用 Under 排做"5 人合影"**：Under 排只换 z-order 不换 X，依然重叠。Under 适合"幕后偷听""远处旁观"这种刻意的场景。
+4. **3 人对话**：用 `leftInside`(-100) + `center`(0) + `rightInside`(+100)，稍宽间距避免拥挤。
+5. **4 人对话**：用 **center-split 法** — `leftInside`(-250) + `center`(-150) + `center`(+150) + `rightInside`(+250)，实现四个均匀分布的 x 坐标（间隙 ~0.5 屏宽），避免"两对成簇、中间过空"。
+6. **必须 5 人合影**（结尾镜头）时，**两端用 `±200` 像素 offset**，把人均匀拉到 [-0.65, -0.34, 0, +0.34, +0.65] 五点。
+7. **不要用 Under 排做"多人合影"**：Under 排只换 z-order 不换 X，依然重叠。Under 适合"幕后偷听""远处旁观"这种刻意的场景。
 
 ---
 
